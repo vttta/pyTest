@@ -10,11 +10,11 @@ class TestLogin(BaseAPITest):
                                json=JSONFixture.for_create_issue(),
                                headers=self.headers,
                                cookies=BaseAPITest.cookie)
-        assert 201 == result.status_code
+        assert result.status_code == 201
 
     def test_create_issue2(self):
         result = requests.post(self.jiraUrl + "/rest/api/2/issue",
                                json=JSONFixture.for_create_issue(),
                                headers=self.headers,
                                cookies=BaseAPITest.cookie)
-        assert 201 == result.status_code
+        assert result.status_code == 201
